@@ -31,6 +31,7 @@ public class Persoon
 		return aantalKinderen;
 	}
 
+		
 	@Override
 	public String toString() {
 		return "Persoon [persoonNr=" + persoonNr + ", voornaam=" + voornaam + ", familienaam=" + familienaam
