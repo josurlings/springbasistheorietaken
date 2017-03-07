@@ -1,5 +1,7 @@
 package be.vdab.entities;
 
+import be.vdab.presentation.PersoonEigenschap;
+
 public class Persoon 
 {
 	private final int persoonNr;
@@ -31,12 +33,46 @@ public class Persoon
 		return aantalKinderen;
 	}
 
-		
-	@Override
-	public String toString() {
+	/*
+	public String toonPersoon(boolean aantalKinderenTonen)
+	{
+		if (aantalKinderenTonen == true)
+		{
 		return "Persoon [persoonNr=" + persoonNr + ", voornaam=" + voornaam + ", familienaam=" + familienaam
 				+ ", aantalKinderen=" + aantalKinderen + "]";
+		}
+		else
+		{
+			return "Persoon [persoonNr=" + persoonNr + ", voornaam=" + voornaam + ", familienaam=" + familienaam
+					+ "]";
+		}
 	}
+	*/
 	
+	public void toonPersoon(PersoonEigenschap[] eigenschappen)
+	{
+		System.out.println("\nPersoonNr : " + this.getPersoonNr());
 		
+		for(PersoonEigenschap eigenschap: eigenschappen)
+			{
+			
+			switch (eigenschap)
+			{
+			case PERSOON_NR:
+				System.out.print("\t" + this.getPersoonNr());
+				break;
+			case VOORNAAM:
+				System.out.print("\t" + this.getVoornaam());
+				break;
+			case FAMILIENAAM:
+				System.out.print("\t"  + this.getFamilienaam());
+				break;
+			case AANTAL_KINDEREN:
+				System.out.print("\t" + this.getAantalKinderen());
+				break;
+			}
+			}
+		
+	}
+				
 }

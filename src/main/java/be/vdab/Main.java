@@ -24,15 +24,8 @@ public class Main
 		new ClassPathXmlApplicationContext("container.xml")) 
 		{
 			PersoonViewer persoonViewer = context.getBean(PersoonViewer.class);
-			if (persoonViewer.isAantalKinderenTonen() == true)
-			{
-				context.getBean(PersoonViewer.class).afbeelden(personen);
-			}
-			else
-			{	
-				context.getBean(PersoonViewer.class).afbeelden(personen);
-			}
-		
+			persoonViewer.afbeelden(personen);
+			
 		}
 	}
 	

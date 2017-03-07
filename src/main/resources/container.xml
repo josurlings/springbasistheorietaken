@@ -4,6 +4,16 @@ xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 xsi:schemaLocation='http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd'>
 <bean id='persoonViewer' class='be.vdab.presentation.PersoonViewer'>
-	<property name='aantalKinderenTonen' value='TRUE'/>
+<!-- 
+	<property name='aantalKinderenTonen' value='TRUE'/> 
+	<constructor-arg value='false'/>
+-->
+<constructor-arg>
+<list>
+<value>VOORNAAM</value>
+<value>FAMILIENAAM</value>
+<value>AANTAL_KINDEREN</value>
+</list>
+</constructor-arg>
 </bean>
 </beans>
