@@ -1,5 +1,6 @@
 package be.vdab.presentation;
 
+import java.io.IOException;
 import java.util.List;
 
 import be.vdab.entities.Persoon;
@@ -35,7 +36,8 @@ public class PersoonViewer
 	*/
 	
 	private PersoonEigenschap[] eigenschappen;
-	private PersoonService service;
+	private final PersoonService service;
+
 	
 	public PersoonViewer(PersoonEigenschap[] eigenschappen, PersoonService service)
 	{
@@ -48,7 +50,7 @@ public class PersoonViewer
 	{
 		this.eigenschappen = eigenschappen;
 	}
-*/	
+
 	
 	public void afbeelden(List<Persoon> personen) 
 		{
@@ -56,6 +58,16 @@ public class PersoonViewer
 		personen.forEach(persoon -> persoon.toonPersoon(this.eigenschappen)); 
 		
 		}
+		
+*/
+	
+	public void afbeelden() throws IOException
+	{
+	// personen.forEach(persoon -> System.out.println(persoon.toonPersoon(eigenschappen))); 
+	List<Persoon> personen = service.findAll();
+	personen.forEach(persoon -> persoon.toonPersoon(this.eigenschappen)); 
+	
+	}
 
 	public PersoonEigenschap[] getEigenschappen() {
 		return eigenschappen;

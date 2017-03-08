@@ -1,5 +1,6 @@
 package be.vdab.services;
 
+import java.io.IOException;
 import java.util.List;
 
 import be.vdab.entities.Persoon;
@@ -8,18 +9,13 @@ import be.vdab.repositories.PersoonRepository;
 public class PersoonServiceImpl implements PersoonService 
 {
 
-	private PersoonRepository repository;
-	
-		
-	public PersoonServiceImpl(PersoonRepository repository) 
-	{
-		this.repository = repository;
+	private final PersoonRepository persoonRepository;
+	public PersoonServiceImpl(PersoonRepository persoonRepository) {
+	this.persoonRepository = persoonRepository;
 	}
-
 	@Override
-	public List<Persoon> findAll()
-	{
-		return repository.findAll();
+	public List<Persoon> findAll() throws IOException {
+	return persoonRepository.findAll();
 	}
-
+	
 }
