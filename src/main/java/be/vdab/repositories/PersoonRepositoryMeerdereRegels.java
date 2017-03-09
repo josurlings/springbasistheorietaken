@@ -6,13 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.stereotype.Repository;
+
 import be.vdab.entities.Persoon;
 
-public class PersoonRepositoryMeerdereRegels implements PersoonRepository 
+//@Repository
+//@Qualifier("TXT")
+class PersoonRepositoryMeerdereRegels implements PersoonRepository 
 {
 
 	private final File bestand;
-	public PersoonRepositoryMeerdereRegels(File bestand)
+//	public PersoonRepositoryMeerdereRegels(@Value("${persoonTXT}") File bestand)
+	PersoonRepositoryMeerdereRegels(@Value("${persoonTXT}") File bestand)
 	{
 	this.bestand = bestand;
 	}

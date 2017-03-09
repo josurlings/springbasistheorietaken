@@ -6,11 +6,14 @@ import java.util.List;
 import be.vdab.entities.Persoon;
 import be.vdab.repositories.PersoonRepository;
 
-public class PersoonServiceImpl implements PersoonService 
+//@Service
+class PersoonServiceImpl implements PersoonService 
 {
 
 	private final PersoonRepository persoonRepository;
-	public PersoonServiceImpl(PersoonRepository persoonRepository) {
+//	public PersoonServiceImpl(@Qualifier("TXT") PersoonRepository persoonRepository)
+	PersoonServiceImpl(PersoonRepository persoonRepository)
+	{
 	this.persoonRepository = persoonRepository;
 	}
 	@Override

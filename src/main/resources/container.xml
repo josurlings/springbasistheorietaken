@@ -15,7 +15,6 @@ http://www.springframework.org/schema/beans/spring-beans.xsd'>
 </list>
 </constructor-arg>
 </bean>
--->
 
 <bean id="persoonRepositoryCSV"
 class="be.vdab.repositories.PersoonRepositoryCSV">
@@ -38,4 +37,10 @@ class="be.vdab.repositories.PersoonRepositoryMeerdereRegels">
 </constructor-arg>
 <constructor-arg ref="persoonService"/>
 </bean>
+-->
+
+<import resource='repositories.xml'/>
+<import resource='services.xml'/>
+<import resource='presentation.xml'/>
+
 </beans>
